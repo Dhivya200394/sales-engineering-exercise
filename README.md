@@ -1,29 +1,52 @@
-# sales-engineering-exercise
-Template for Solutions Engineer candidates to use for creating their exercise submissions
+# Route Anywhere
+Route Anywhere is a basic navigation application which is prepared to demonstrate the route direction between two locations.
+
+Route Anywhere is a simple interface for users to get directions between two points on a map using the NextBillion Maps API.
 
 # Story
-Develop a demonstration  that allows a user to search for a given Point Of Interest near his position and get walking and/or driving directions to it.
-Intentionally the Use-Case is very generic. No further details will be provided on the Use-Case, to avoid biassing the candidate creativity.
+The aim was to Develop a demonstration that allows a user to search for a given Point Of Interest near his position and get walking and/or driving directions to it.
 
-# Requirements
-- The demonstration should have a visual front end (UI), similar to what NextBillion.ai Solution Engineers would use during customer meetings to demonstrate the technology stack.
-- The demonstration should exercise the NextBillion.ai API 
-Documentation at https://doc.maps.nextbillion.io/api_reference/
-API key will be provided to the candidate if the project is accepted.
-- The demonstration should be committed in the Github repository provided.
-- The candidate should be ready to present his work as one of the objectives of this exercise is to assess how comfortable the candidate is presenting to a small audience.
+# Approach
+- The demonstration was started by analysing the requirement and the resources available. 
+- The objective was set to develop a simple application and not to build a complex model in this case.
+- The resources available were the api's of nextbillion.ai with the required api key.
+- The following steps were adapted for building the demo application.
+  - The html code of nextbillion's direction api was obtained from code sandbox (https://codesandbox.io/s/fjgq7?file=/v2/directions.html).
+  - The html code was tweaked a bit to include origin and destination place holders for user's inputs.
+  - The "getCurrentPosition" function was used to get the user's current position using the geolocation api provided by the browser, which will be the input for the origin.
+  - The "map.on" function was used in the code, by which the user can select his/her desired destination POI on the map by a single click.
+  - The code was checked and run.
+  
+# Supports Used
+- Brackets 2.1.3 - for coding.
+- ChatGPT Feb 13 Version. Free Research Preview - for error handling and code understanding.
 
-# No Requirements
-- No requirements on the technology of choice (programming language, framework, etc) for implementing the demonstration.
-- No requirements on the type of application (desktop or mobile).
-- No requirements on time spent to build the demonstration. We do not expect the candidate to spend too much time developing the demo. As such the demonstration does not have to be complete, as long as the key building blocks are in place and can be used to guide the discussion during review.
-- Not a requirement but the https://maplibre.org/ SDKs can be used in combination with NextBillion.ai API, especially for tiles rendering and objects overlay (markers, GeoJSON polylines, polygons, etc).
+# How to use the application
+- Opening the Application
+    - Open the Route_Anywhere.HTML from the Github Repository.
+    - Click on Raw.
+    - Right click and save as in your desired file path.
+    - Now double click and open the saved file.
+    - The application opens in your default browser.
+- Supported Browsers
+    - Google Chrome.
+    - Firefox.
+- Use Case
+    - Click on 'Current Location' button to get your current location as origin.
+    - Click on any desired destination POI on the map.
+    - Click on 'Request Direction' Button. 
+    - The application will generate the direction between the origin and destination.
+    - Click on 'Remove Direction' and repeat the above Use Case steps to find the direction to a different POI.
+    
+# Challenges Faced
+- Unable to pull in the Directions, Geocode and Search api into the HTML script, even though the json call was successful.
 
+# Further Improvisations
+- Make a better UI for the application by a professional UI developer.
+- Improvise the code to zoom to the user's location once the origin is given.
+- Suggest nearby POIs like Restaurants, Hospitals etc. to the user using the search api.
+- Add more functionalities like scale bar, lat long display, compass, etc.
+- Use distance api to choose the mode of transport and generate the distance accordingly.
 
-# Guidelines & Deliverables
-- The demonstration should be committed in the Github repository provided. Please create and commit a branch for your work.
-- Describe your solution in a README and how to run it. Ensure that you clearly state assumptions that you made.
-- Please commit early and often and with good commit messages. This will allow us to see how you've approached the problem. Don't worry about changing things around often.
-- Be prepared to discuss some of your approaches and design decisions.
-- Please ask any questions if something is unclear.
-
+# Closure
+Overall I enjoyed a lot working on this exercise!
