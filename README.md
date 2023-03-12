@@ -21,7 +21,7 @@ The aim was to Develop a demonstration that allows a user to search for a given 
 
 # How to use the application
 - Opening the Application
-    - Open the Route_Anywhere.HTML from the Github Repository.
+    - Open the [Route_Anywhere](Route_Anywhere.HTML) from the Github Repository.
     - Click on Raw.
     - Right click and save as in your desired file path.
     - Now double click and open the saved file.
