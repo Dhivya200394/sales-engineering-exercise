@@ -48,3 +48,5 @@ The aim was to Develop a demonstration that allows a user to search for a given 
 
 # Closure
 Overall I enjoyed a lot working on this exercise!
+
+(Please feel free to read the Demonstration Scrip file, which conveys the demonstration approach to a prospective client)
