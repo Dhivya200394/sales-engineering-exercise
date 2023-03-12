@@ -5,6 +5,9 @@ Route Anywhere is a basic navigation application which is prepared to demonstrat
 The aim was to Develop a demonstration that allows a user to search for a given Point Of Interest near his position and get walking and/or driving directions to it.
 
 # Approach
+- This exercise was taken up with an assumption that the demo will be given to the client, with an actual application flow that demonstrates the api's function and the way nextbillion.ai’s other api's can be utilized.
+- A script of how the discussion with the client will take place is mentioned in the [Demonstration Scrip file](Demonstration_Script.md).
+- The working demonstration was started by understanding the requirement and analysing the resources & challenges.
 - The demonstration was started by analysing the requirement and the resources available. 
 - The objective was set to develop a simple application and not to build a complex model in this case.
 - The resources available were the api's of nextbillion.ai with the required api key.
