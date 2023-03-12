@@ -39,7 +39,7 @@ The aim was to Develop a demonstration that allows a user to search for a given 
     - Click on 'Remove Direction' and repeat the above Use Case steps to find the direction to a different POI.
     
 # Challenges Faced
-- Unable to pull in the Directions, Geocode and Search api into the HTML script, even though the json call was successful.
+- Unable to pull in the Directions, Geocode and Search api into the demo, even though the json call was successful.
 
 # Further Improvisations
 - Make a better UI for the application by a professional UI developer.
