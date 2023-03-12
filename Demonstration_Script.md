@@ -1,4 +1,4 @@
-_(Please read the Readme.md file before reading this file)_
+_(Please read the [Readme.md](README.md) file before reading this file)_
 # Demonstration to the Client
 This file contains the presentation script of the demonstration to the prospective client.
 
