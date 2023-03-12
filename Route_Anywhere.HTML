@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Route Anywhere</title>
+    <link href="https://maps-gl.nextbillion.io/maps/api/css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        cursor: pointer; /* Change cursor type */
+      }
+      #map {
+        width: 99vw;
+        height: 97.7vh;
+      }
+      #add-route {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 12px;
+        z-index: 99;
+      }
+      #remove-route {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 12px;
+        z-index: 99;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="origin">Origin:</label>
+    <input type="text" id="origin" name="origin" placeholder="Click on Current Location" />
+
+    <button id="get-location">Current Location</button>
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" placeholder="Click the POI on the map" />
+
+    <div id="map"></div>
+    <button id="add-route">Request Direction</button>
+    <button id="remove-route">Remove Direction</button>
+    
+    <script src="https://maps-gl.nextbillion.io/maps/api/js"></script>
+    <script>
+      (function () {
+        nextbillion.setApiKey("b297bafeb0df4298948308d88da7b595");
+        nextbillion.setApiHost("api.nextbillion.io");
+
+        var map = new nextbillion.maps.Map(document.getElementById("map"), {
+          zoom: 5,
+          center: { lat: 20.5937, lng: 78.9629 },
+        });
+
+        const originInput = document.getElementById("origin");
+        const destinationInput = document.getElementById("destination");
+
+        // Get user's current location as the origin
+        document.getElementById("get-location").addEventListener("click", function () {
+          if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition((position) => {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              const origin = { lat: latitude, lng: longitude };
+              originInput.value = `${latitude}, ${longitude}`;
+              map.addMarker(origin);
+            });
+          }
+        });
+
+        let directionShapes = null;
+        let destinationMarker = null;
+
+        map.on("click", async function (event) {
+          if (destinationMarker) {
+            map.removeMarker(destinationMarker);
+          }
+
+          const { lat, lng } = event.lngLat;
+          destinationInput.value = `${lat}, ${lng}`;
+          destinationMarker = map.addMarker({ lat, lng });
+        });
+
+        document.getElementById("add-route").onclick = async function () {
+          if (directionShapes) {
+            return;
+          }
+
+          const origin = {
+            lat: parseFloat(originInput.value.split(",")[0].trim()),
+            lng: parseFloat(originInput.value.split(",")[1].trim()),
+          };
+          const destination = {
+            lat: parseFloat(destinationInput.value.split(",")[0].trim()),
+            lng: parseFloat(destinationInput.value.split(",")[1].trim()),
+          };
+      const resp = await nextbillion.api.Directions({
+        origin: origin,
+        destination: destination
+      });
+
+      directionShapes = map.renderDirections(resp);
+    };
+
+    document.getElementById("remove-route").onclick = function () {
+      if (!directionShapes) {
+        return;
+      }
+      map.removeDirections(directionShapes);
+      directionShapes = null;
+    };
+  })();
+</script>
+  </body>
+</html>
