@@ -47,6 +47,8 @@ The aim was to Develop a demonstration that allows a user to search for a given 
 - Suggest nearby POIs like Restaurants, Hospitals etc. to the user using the search api.
 - Add more functionalities like scale bar, lat long display, compass, etc.
 - Use distance api to choose the mode of transport and generate the distance accordingly.
+-![Demo](NB.png)
+
 
 # Closure
 Overall I enjoyed a lot working on this exercise!
