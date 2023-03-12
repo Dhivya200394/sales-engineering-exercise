@@ -19,4 +19,8 @@ _(It is Assumed that the demo file is opened in a browser and shared with the cl
   - Navigation API - The Navigation API can be used as an input into your Navigation app. Alternatively, you can directly use nextbillion.ai’s Navigation SDK for a complete turn by turn navigation experience
   - AutoSuggest API - This API shall be used in the search criteria to suggest address or place based on an incomplete or misspelled query, from which the user shall select the best query to submit
   - The sample UI of the APIs and SDKs shall be presented to the client via images
-[API Images](Picture1.png)
+![APIImages](Picture1.png)
+
+# Client's Call
+- After the demo, the client's call on the API and SDK requirement is noted
+- Technical specific requiremnets if any is shared with the client and the nextbillion.ai team.
